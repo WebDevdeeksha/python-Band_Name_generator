@@ -1,1 +1,1 @@
-# python-Band_Name_generator
+# It will display a band name with general information.
