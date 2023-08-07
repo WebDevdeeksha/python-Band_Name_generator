@@ -1,37 +1,62 @@
 import random
 
-MENU = ("""
-    1. ROCK
-    2. PAPER
-    3. SCISSOR""")
+game_continue = True
 
-print(MENU)
+cc_list = ["ROCK", "PAPER", "SCISSOR"]
+cc_choice = random.choice(cc_list)
+print(f"Computer's random choice is: {cc_choice}")
 
-user = int(input("Enter ur choice from 1, 2, and 3:- "))
-com_list = ["ROCK","PAPER", "SCISSOR"]
-com_choice = random.choice(com_list)
-print("computer choice is ", com_choice)
+print("Choose any one option from given menu; ")
+menu = ["ROCK", "PAPER", "SCISSOR"]
+print(menu)
 
-if(user==1):
-    if(com_choice=="ROCK"):
-        print("IT'S A TIE")
-    elif(com_choice=="PAPER"):
-        print("YOU LOSE")
+while game_continue:
+    user_choice = input("Enter your choice: ").upper()
+    if user_choice not in menu:
+        game_continue = False
+        print("Not present in Menu")
+
+    elif (user_choice=="ROCK"):
+        if(cc_choice=="ROCK"):
+            print(f"Computer's random choice is: {cc_choice}")
+            print("Since, it's a draw")
+        elif(cc_choice=="PAPER"):
+            print(f"Computer's random choice is: {cc_choice}")
+            print("computer wins!, You lose")
+        else:
+            print(f"Computer's random choice is: {cc_choice}")
+            print("You win!, computer Loses")
+
+    elif(user_choice=="PAPER"):
+        if(cc_choice=="ROCK"):
+            print(f"Computer's random choice is: {cc_choice}")
+            print("You wins!, computer loses")
+        elif(cc_choice=="PAPER"):
+            print(f"Computer's random choice is: {cc_choice}")
+            print("Since, It's a draw")
+        else:
+            print(f"Computer's random choice is: {cc_choice}")
+            print("Computer wins!, You loses")
+
     else:
-        print("YOU WON!")
-elif(user==2):
-    if(com_choice=="ROCK"):
-        print("YOU WON!")
-    elif(com_choice=="PAPER"):
-        print("IT'S A TIE")
+        if(cc_choice=="ROCK"):
+            print(f"Computer's random choice is: {cc_choice}")
+            print("Computer wins!, You lose")
+        elif(cc_choice=="PAPER"):
+            print(f"Computer's random choice is: {cc_choice}")
+            print("You wins!, Computer loses")
+        else:
+            print(f"Computer's random choice is: {cc_choice}")
+            print("Since, It's a draw")
+    
+    choice = input("\n do you want to play more, type 'y' or 'n': ").lower()
+    if(choice=='y'):
+        game_continue = True
+    elif(choice=='n'):
+        game_continue = False
+        print("You choses no to play")
     else:
-        print("YOU LOSE")
-elif(user==3):
-    if(com_choice=="ROCK"):
-        print("YOU LOSE")
-    elif(com_choice=="PAPER"):
-        print("YOU WON!")
-    else:
-        print("IT'S A TIE")
-else:
-    print("INVALID INPUT")
+        game_continue = False
+        print("You entered an invalid input.")
+        
+    
