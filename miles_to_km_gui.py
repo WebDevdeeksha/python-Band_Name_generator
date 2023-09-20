@@ -1,5 +1,5 @@
 # Mile to Km conversion; Formula to calculate is to multiply the mile number with (1.609341666666667) float number
-# I'm taking an accurate number 1.
+# I'm taking an accurate number 1.609 for calculation
 
 from tkinter import *
 
